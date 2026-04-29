@@ -1,22 +1,17 @@
-import enum
 from sqlalchemy import Column, Enum, Integer, String
 from sqlalchemy.orm import relationship
 from core.database import Base
+from core.enums import ExerciseType
 from models.exercise_muscle import ExerciseMuscle
-
-
-class SetType(enum.Enum):
-    REPS = "reps"
-    Time = "time"
 
 class Exercise(Base):
     
     __tablename__ = "Exercise"
     
-    exercise_id = Column(Integer, primary_key=True, index=True)
+    id = Column(Integer, primary_key=True, index=True)
     name = Column(String(255), nullable=False)
     instruction = Column(String(510), nullable=False)
-    exercise_types = Column(Enum(SetType))
+    exercise_types = Column(Enum(ExerciseType))
     
     muscles = relationship(
         "Muscle", 

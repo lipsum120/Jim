@@ -7,7 +7,7 @@ class User(Base):
     
     __tablename__ = "User"
     
-    user_id = Column(Integer, primary_key=True, index=True)
+    id = Column(Integer, primary_key=True, index=True)
     name = Column(String(255), nullable=False)
     height = Column(Float(5,2), nullable=False)
     weight = Column(Float(5, 2), nullable=False)

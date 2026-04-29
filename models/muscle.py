@@ -7,7 +7,7 @@ class Muscle(Base):
     
     __tablename__ = "Muscle"
     
-    muscle_id = Column(Integer, primary_key=True, index=True)
+    id = Column(Integer, primary_key=True, index=True)
     name = Column(String(255), nullable=False)
     
     exercises = relationship(

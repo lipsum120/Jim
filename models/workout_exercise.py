@@ -7,11 +7,13 @@ class WorkoutExercise(Base):
     
     __tablename__= "WorkoutExercise"
     
-    workout_exercise_id = Column(Integer, primary_key=True, index=True)
+    id = Column(Integer, primary_key=True, index=True)
     target_reps = Column(Integer, nullable=False)
-    workout_id = Column(Integer, ForeignKey("Workout.workout_id"))
-    exercise_id = Column(Integer, ForeignKey("Exercise.exercise_id"))
+    target_sets = Column(Integer, nullable=False)
+    target_duration = Column(Integer, nullable=False)
+    
+    workout_id = Column(Integer, ForeignKey("Workout.id"))
+    exercise_id = Column(Integer, ForeignKey("Exercise.id"))
     
     workout = relationship("Workout", back_populates="workout_exercises")
     exercise = relationship("Exercise", back_populates="exercise_workouts")
-    exercise_sets = relationship("ExerciseSet", back_populates="workout_exercise")
