@@ -1,7 +1,6 @@
-from ast import List
+from typing import List
 from pydantic import BaseModel
 from core.enums import ExerciseType
-from schemas.muscle import Muscle
 
 
 class Exercise(BaseModel):
@@ -9,8 +8,9 @@ class Exercise(BaseModel):
     name: str
     instruction: str
     exercise_types: ExerciseType
-    muscles: List[Muscle] = []
+    # muscles: List["Muscle"] = []
     
-    class Config:
-        orm_mode: bool = True
+    # class Config:
+    #     orm_mode = True
+    
     
