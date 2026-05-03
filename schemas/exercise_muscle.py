@@ -1,9 +1,10 @@
 from pydantic import BaseModel
-from schemas.exercise import Exercise
 
 
-class ExerciseMuscle(BaseModel):
-    muscle: Muscle
+class ExerciseRef(BaseModel):
+    id: int
+    name: str
     
-    class Config:
-        orm_model = True
+class MuscleRef(BaseModel):
+    id: int
+    name: str

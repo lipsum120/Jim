@@ -10,5 +10,4 @@ class Workout(BaseModel):
     name: str
     exercises: List[WorkoutExercise] = []
     
-    class Config:
-        orm_mode: bool = True
+    model_config = {"from_attributes": True}

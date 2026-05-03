@@ -10,5 +10,4 @@ class User(BaseModel):
     weight: float
     workouts: List[Workout] = []
     
-    class Config:
-        orm_mode: bool = True
+    model_config = {"from_attributes": True}

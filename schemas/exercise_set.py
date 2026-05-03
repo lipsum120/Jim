@@ -7,5 +7,4 @@ class ExerciseSet(BaseModel):
     duration: int
     rep: int
     
-    class Config:
-        orm_model = True
+    model_config = {"from_attributes": True}

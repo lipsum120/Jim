@@ -1,9 +1,6 @@
-from repositories.user_repo import UserRepository
-
-
 class UserService():
-    def __init__(self, db):
-        self.repo = UserRepository(db)
+    def __init__(self, repo):
+        self.repo = repo
     
     def get_users(self):
         return self.repo.get_users()

@@ -9,5 +9,4 @@ class WorkoutExercise(BaseModel):
     target_duration: int
     exercise: Exercise
     
-    class Config:
-        orm_model = True
+    model_config = {"from_attributes": True}
