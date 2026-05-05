@@ -4,7 +4,6 @@ from core.enums import ExerciseType
 from schemas.exercise_muscle import MuscleRef
 
 
-    
 class Exercise(BaseModel):
     id: int
     name: str
